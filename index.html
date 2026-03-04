@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NCC Cadet Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="c-dot"></div>
+  <div id="c-ring"></div>
+
+  <!-- Floating Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">NCC Cadet</a>
+
+      <button id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul id="navLinks">
+        <li><a href="#hero"        class="nav-link">Home</a></li>
+        <li><a href="#about"       class="nav-link">About</a></li>
+        <li><a href="#activities"  class="nav-link">Activities</a></li>
+        <li><a href="#ncc"         class="nav-link">NCC</a></li>
+        <li><a href="#timeline"    class="nav-link">Timeline</a></li>
+        <li><a href="#honours"     class="nav-link">Honours</a></li>
+        <li><a href="#contact"     class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-content">
+      <p class="hero-sub">National Cadet Corps</p>
+      <h1><span class="h1-name">Your Name Here</span></h1>
+      <p class="hero-desc">Senior Under Officer · NCC Air Wing · A-Certificate Holder</p>
+      <div class="hero-btns">
+        <a href="#activities" class="btn-solid">View Activities <span>→</span></a>
+        <a href="#contact"    class="btn-outline">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about" class="reveal">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p>Brief introduction about yourself, your NCC journey, and aspirations.</p>
+    </div>
+  </section>
+
+  <!-- ── ACTIVITIES ── -->
+  <section id="activities" class="reveal">
+    <div class="container">
+      <h2 class="section-title">Activities</h2>
+      <div class="act-grid">
+        <div class="act-card" style="--gx:50%;--gy:50%">
+          <div class="act-icon">🏕️</div>
+          <h3>Annual Training Camp</h3>
+          <p>Description of the camp and learnings.</p>
+        </div>
+        <div class="act-card" style="--gx:50%;--gy:50%">
+          <div class="act-icon">🎯</div>
+          <h3>Shooting Practice</h3>
+          <p>Rifle shooting and marksmanship training.</p>
+        </div>
+        <div class="act-card" style="--gx:50%;--gy:50%">
+          <div class="act-icon">🏃</div>
+          <h3>Drill & Parade</h3>
+          <p>Discipline and precision through regular drill.</p>
+        </div>
+        <div class="act-card" style="--gx:50%;--gy:50%">
+          <div class="act-icon">🌊</div>
+          <h3>Adventure Activity</h3>
+          <p>Trekking, rappelling and outdoor challenges.</p>
+        </div>
+        <div class="act-card" style="--gx:50%;--gy:50%">
+          <div class="act-icon">🤝</div>
+          <h3>Community Service</h3>
+          <p>Social outreach and nation-building initiatives.</p>
+        </div>
+        <div class="act-card" style="--gx:50%;--gy:50%">
+          <div class="act-icon">✈️</div>
+          <h3>Air Wing Training</h3>
+          <p>Aeronautics, gliding and aviation awareness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NCC CARDS ── -->
+  <section id="ncc" class="reveal">
+    <div class="container">
+      <h2 class="section-title">NCC Highlights</h2>
+      <div class="nc-grid">
+        <div class="nc-card" style="--gx:50%;--gy:50%">
+          <h3>Republic Day Camp</h3>
+          <p>Selected for the prestigious RDC held in New Delhi.</p>
+        </div>
+        <div class="nc-card" style="--gx:50%;--gy:50%">
+          <h3>B Certificate</h3>
+          <p>Achieved B grade in the NCC Certificate examination.</p>
+        </div>
+        <div class="nc-card" style="--gx:50%;--gy:50%">
+          <h3>Best Cadet Award</h3>
+          <p>Recognised as Best Cadet at the district level camp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VALUES ── -->
+  <section id="values" class="reveal">
+    <div class="container">
+      <h2 class="section-title">Core Values</h2>
+      <div class="val-grid">
+        <div class="val-box">Unity &amp; Discipline</div>
+        <div class="val-box">Service Before Self</div>
+        <div class="val-box">Leadership</div>
+        <div class="val-box">Integrity</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIMELINE ── -->
+  <section id="timeline" class="reveal">
+    <div class="container">
+      <h2 class="section-title">My Journey</h2>
+      <div class="tl-wrapper">
+        <div class="tl-item tl-card">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-year">2021</span>
+            <h3>Enrolled in NCC</h3>
+            <p>Joined the Air Wing as a Junior Division cadet.</p>
+          </div>
+        </div>
+        <div class="tl-item tl-card">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-year">2022</span>
+            <h3>A Certificate</h3>
+            <p>Cleared A Certificate with distinction.</p>
+          </div>
+        </div>
+        <div class="tl-item tl-card">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-year">2023</span>
+            <h3>Camp Leader</h3>
+            <p>Led the contingent at the State-level Annual Camp.</p>
+          </div>
+        </div>
+        <div class="tl-item tl-card">
+          <div class="tl-dot"></div>
+          <div class="tl-content">
+            <span class="tl-year">2024</span>
+            <h3>Senior Under Officer</h3>
+            <p>Promoted to SUO — highest cadet rank in the unit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HONOURS ── -->
+  <section id="honours" class="reveal">
+    <div class="container">
+      <h2 class="section-title">Honours &amp; Awards</h2>
+      <ul class="hs-list">
+        <li class="hs-item">🏅 Best Cadet — District Level, 2023</li>
+        <li class="hs-item">🥇 Gold Medal — Shooting Competition, 2022</li>
+        <li class="hs-item">📜 A &amp; B Certificate with Distinction</li>
+        <li class="hs-item">🎖️ Republic Day Camp Participation, New Delhi</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="reveal">
+    <div class="container">
+      <h2 class="section-title">Contact Me</h2>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <input  type="text"  name="name"    placeholder="Your Name"    required />
+        <input  type="email" name="email"   placeholder="Your Email"   required />
+        <textarea            name="message" placeholder="Your Message" required rows="5"></textarea>
+        <button type="submit" class="f-submit btn-solid">
+          Send Message <span>→</span>
+        </button>
+        <p id="fOk" style="display:none; color:#4a6741; margin-top:1rem; font-weight:600;">
+          ✅ Message sent successfully!
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>&copy; 2025 NCC Cadet Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

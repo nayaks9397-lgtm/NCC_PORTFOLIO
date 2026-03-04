@@ -1,210 +1,523 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NCC Cadet Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>NCC Cadet Portfolio — Senior Under Officer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
-  <!-- Custom Cursor -->
   <div id="c-dot"></div>
   <div id="c-ring"></div>
-
-  <!-- Floating Canvas Background -->
   <canvas id="bg-canvas"></canvas>
+  <div class="grain"></div>
 
-  <!-- ── NAVBAR ── -->
+  <div id="loader">
+    <div class="loader-emblem">
+      <svg viewBox="0 0 80 80" fill="none" width="80" height="80">
+        <circle cx="40" cy="40" r="37" stroke="#c8a84b" stroke-width="2.5" stroke-dasharray="232" stroke-dashoffset="232" class="loader-ring"/>
+        <polygon points="40,14 44,28 58,28 47,37 51,51 40,43 29,51 33,37 22,28 36,28" fill="#c8a84b" class="loader-star"/>
+      </svg>
+      <span>NCC</span>
+    </div>
+  </div>
+
   <nav id="navbar">
-    <div class="nav-container">
-      <a href="#hero" class="nav-brand">NCC Cadet</a>
-
-      <button id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <svg viewBox="0 0 54 54" fill="none" width="38" height="38">
+          <circle cx="27" cy="27" r="25" stroke="#c8a84b" stroke-width="1.8"/>
+          <circle cx="27" cy="27" r="20" stroke="#c8a84b" stroke-width="0.8" stroke-dasharray="3 2" opacity="0.6"/>
+          <polygon points="27,9 30,19 41,19 32,26 35,36 27,30 19,36 22,26 13,19 24,19" fill="#c8a84b"/>
+          <line x1="16" y1="42" x2="38" y2="42" stroke="#c8a84b" stroke-width="1.5"/>
+          <text x="27" y="50" text-anchor="middle" fill="#c8a84b" font-size="4.5" font-family="Oswald" letter-spacing="1.5">NCC</text>
+        </svg>
+        <div class="logo-text-block">
+          <span class="lt-main">CADET PORTFOLIO</span>
+          <span class="lt-sub">UNITY AND DISCIPLINE</span>
+        </div>
+      </a>
+      <button id="hamburger" aria-label="menu"><span></span><span></span><span></span></button>
       <ul id="navLinks">
-        <li><a href="#hero"        class="nav-link">Home</a></li>
-        <li><a href="#about"       class="nav-link">About</a></li>
-        <li><a href="#activities"  class="nav-link">Activities</a></li>
-        <li><a href="#ncc"         class="nav-link">NCC</a></li>
-        <li><a href="#timeline"    class="nav-link">Timeline</a></li>
-        <li><a href="#honours"     class="nav-link">Honours</a></li>
-        <li><a href="#contact"     class="nav-link">Contact</a></li>
+        <li><a href="#hero"         class="nav-link"><em>01</em>Home</a></li>
+        <li><a href="#about-ncc"    class="nav-link"><em>02</em>About NCC</a></li>
+        <li><a href="#profile"      class="nav-link"><em>03</em>Profile</a></li>
+        <li><a href="#performances" class="nav-link"><em>04</em>Performance</a></li>
+        <li><a href="#firing"       class="nav-link"><em>05</em>Firing</a></li>
+        <li><a href="#camps"        class="nav-link"><em>06</em>Camps</a></li>
+        <li><a href="#activities"   class="nav-link"><em>07</em>Activities</a></li>
+        <li><a href="#certificates" class="nav-link"><em>08</em>Certificates</a></li>
+        <li><a href="#timeline"     class="nav-link"><em>09</em>Journey</a></li>
+        <li><a href="#contact"      class="nav-link"><em>10</em>Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- ── HERO ── -->
+  <!-- HERO -->
   <section id="hero">
-    <div class="hero-content">
-      <p class="hero-sub">National Cadet Corps</p>
-      <h1><span class="h1-name">Your Name Here</span></h1>
-      <p class="hero-desc">Senior Under Officer · NCC Air Wing · A-Certificate Holder</p>
-      <div class="hero-btns">
-        <a href="#activities" class="btn-solid">View Activities <span>→</span></a>
-        <a href="#contact"    class="btn-outline">Contact Me</a>
+    <div class="hero-camo-overlay"></div>
+    <div class="hero-grid-lines"></div>
+    <div class="hero-logo-col">
+      <div class="ncc-big-logo reveal-scale">
+        <svg viewBox="0 0 260 260" fill="none">
+          <circle cx="130" cy="130" r="124" stroke="#c8a84b" stroke-width="3"/>
+          <circle cx="130" cy="130" r="112" stroke="#3d5c35" stroke-width="1.5" stroke-dasharray="7 4"/>
+          <circle cx="130" cy="130" r="100" stroke="#c8a84b" stroke-width="0.5" opacity="0.35"/>
+          <path d="M22,130Q10,104 32,84Q42,108 22,130Z" fill="#3d5c35" opacity="0.95"/>
+          <path d="M16,145Q0,124 14,100Q28,118 16,145Z" fill="#3d5c35" opacity="0.85"/>
+          <path d="M18,162Q0,144 10,116Q26,132 18,162Z" fill="#3d5c35" opacity="0.75"/>
+          <path d="M26,178Q8,162 14,134Q32,148 26,178Z" fill="#3d5c35" opacity="0.65"/>
+          <path d="M40,192Q22,178 24,150Q44,162 40,192Z" fill="#3d5c35" opacity="0.55"/>
+          <path d="M238,130Q250,104 228,84Q218,108 238,130Z" fill="#3d5c35" opacity="0.95"/>
+          <path d="M244,145Q260,124 246,100Q232,118 244,145Z" fill="#3d5c35" opacity="0.85"/>
+          <path d="M242,162Q260,144 250,116Q234,132 242,162Z" fill="#3d5c35" opacity="0.75"/>
+          <path d="M234,178Q252,162 246,134Q228,148 234,178Z" fill="#3d5c35" opacity="0.65"/>
+          <path d="M220,192Q238,178 236,150Q216,162 220,192Z" fill="#3d5c35" opacity="0.55"/>
+          <line x1="76" y1="182" x2="184" y2="78" stroke="#c8a84b" stroke-width="3.5" opacity="0.9" stroke-linecap="round"/>
+          <line x1="184" y1="182" x2="76" y2="78" stroke="#c8a84b" stroke-width="3.5" opacity="0.9" stroke-linecap="round"/>
+          <rect x="66"  y="177" width="38" height="9" rx="4" fill="#c8a84b"/>
+          <rect x="156" y="177" width="38" height="9" rx="4" fill="#c8a84b"/>
+          <polygon points="130,50 142,88 182,88 150,112 162,150 130,126 98,150 110,112 78,88 118,88" fill="#c8a84b" stroke="#8a6010" stroke-width="1.5"/>
+          <path d="M88,124Q112,112 130,118Q148,112 172,124" stroke="#c8a84b" stroke-width="2" fill="none" opacity="0.45"/>
+          <text x="130" y="166" text-anchor="middle" fill="#c8a84b" font-family="Bebas Neue" font-size="36" letter-spacing="12">NCC</text>
+          <text x="130" y="183" text-anchor="middle" fill="#c8a84b" font-family="Oswald" font-size="10" letter-spacing="5" opacity="0.9">NATIONAL CADET CORPS</text>
+          <path id="arc1" d="M46,182 A90,90 0 0,0 214,182" fill="none"/>
+          <text font-family="Barlow Condensed" font-size="9" fill="#c8a84b" letter-spacing="3" opacity="0.75">
+            <textPath href="#arc1" startOffset="8%">UNITY  •  AND  •  DISCIPLINE</textPath>
+          </text>
+        </svg>
+      </div>
+      <div class="tricolour-strip">
+        <span class="tc-s"></span>
+        <span class="tc-w">INDIA</span>
+        <span class="tc-g"></span>
+      </div>
+    </div>
+    <div class="hero-content-col">
+      <div class="hero-ribbon reveal-up">AIR WING &nbsp;·&nbsp; SENIOR DIVISION &nbsp;·&nbsp; A · B · C CERTIFICATE</div>
+      <h1 class="hero-h1">
+        <span class="h1-sub reveal-up">Senior Under Officer</span>
+        <span class="h1-name">YOUR NAME</span>
+      </h1>
+      <div class="hero-rule reveal-up"></div>
+      <p class="hero-tagline reveal-up">Forged in discipline.<br>Tempered by service.<br>Ready for the nation.</p>
+      <div class="hero-counters reveal-up">
+        <div class="hc-item"><span class="hc-num" data-target="4">0</span><span class="hc-lab">Years<br>Service</span></div>
+        <div class="hc-div"></div>
+        <div class="hc-item"><span class="hc-num" data-target="12">0</span><span class="hc-lab">Camps<br>Attended</span></div>
+        <div class="hc-div"></div>
+        <div class="hc-item"><span class="hc-num" data-target="9">0</span><span class="hc-lab">Awards<br>Won</span></div>
+        <div class="hc-div"></div>
+        <div class="hc-item"><span class="hc-num" data-target="120">0</span><span class="hc-lab">Cadets<br>Mentored</span></div>
+      </div>
+      <div class="hero-btns reveal-up">
+        <a href="#certificates" class="btn-primary">&#127894; VIEW CERTIFICATES</a>
+        <a href="#about-ncc" class="btn-ghost">ABOUT NCC &#x2193;</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><div class="scroll-line"></div><span>SCROLL DOWN</span></div>
+  </section>
+
+  <!-- ABOUT NCC -->
+  <section id="about-ncc">
+    <div class="sec-head reveal">
+      <span class="eyebrow">KNOW THE FORCE</span>
+      <h2>About <em>NCC</em></h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="about-grid">
+      <div class="ab-card reveal" style="--d:0s"><div class="ab-icon">&#9876;&#65039;</div><h3>What is NCC?</h3><p>The National Cadet Corps is the largest uniformed youth organization in the world. Established in 1948 under the Ministry of Defence, it trains over 13 lakh cadets across Army, Navy and Air Wings annually.</p></div>
+      <div class="ab-card reveal" style="--d:.1s"><div class="ab-icon">&#127919;</div><h3>Mission</h3><p>To develop character, comradeship, discipline, leadership, secular outlook, spirit of adventure and ideals of selfless service — moulding young citizens into ideal future leaders of the nation.</p></div>
+      <div class="ab-card reveal" style="--d:.2s"><div class="ab-icon">&#127760;</div><h3>Motto</h3><p class="motto-quote">"Unity and Discipline"</p><p>The NCC flag bears Red for Army, Deep Blue for Navy and Sky Blue for Air Force — unity across all three wings of the Armed Forces.</p></div>
+      <div class="ab-card reveal" style="--d:.3s"><div class="ab-icon">&#128203;</div><h3>Organisation</h3><p>Headed by DG NCC, a Lt. General rank officer. 17 Directorates across India, 826 NCC units, training youth in all three wings of the Indian Armed Forces.</p></div>
+      <div class="ab-card reveal" style="--d:.4s"><div class="ab-icon">&#127885;</div><h3>Certificates A · B · C</h3><p>'A' for Junior Division. 'B' after 2 years Senior Division. 'C' — the highest NCC certificate. C-cert holders get special weightage in Armed Forces and Civil Services recruitment.</p></div>
+      <div class="ab-card reveal" style="--d:.5s"><div class="ab-icon">&#9992;&#65039;</div><h3>Air Wing</h3><p>Trains cadets in aeronautics, gliding, microlight flying, ATC and ground subjects. Air Wing cadets can earn Flying Scholarships and march at the Republic Day Parade, New Delhi.</p></div>
+    </div>
+    <div class="ncc-wings-band reveal">
+      <div class="wing-item wing-army"><div class="wi-icon">&#129686;</div><h4>ARMY WING</h4><p>Red colour on the NCC flag. Foot drill, field craft, obstacle courses, map reading and weapon training.</p></div>
+      <div class="wing-item wing-navy"><div class="wi-icon">&#9875;</div><h4>NAVY WING</h4><p>Deep Blue on the flag. Seamanship, water sports, INS attachment camps and maritime awareness.</p></div>
+      <div class="wing-item wing-air"><div class="wi-icon">&#9992;&#65039;</div><h4>AIR WING</h4><p>Sky Blue on the flag. Aeronautics, gliding, microlight flying, ATC training and Air Force attachments.</p></div>
+    </div>
+  </section>
+
+  <!-- PROFILE -->
+  <section id="profile">
+    <div class="sec-head reveal">
+      <span class="eyebrow">IDENTITY &amp; RANK</span>
+      <h2>Cadet <em>Profile</em></h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="profile-wrap">
+      <div class="profile-photo-col reveal-left">
+        <div class="photo-frame">
+          <div class="photo-inner">
+            <div class="photo-ph">
+              <svg viewBox="0 0 100 120" fill="none" width="100" height="120">
+                <ellipse cx="50" cy="28" rx="20" ry="22" fill="#4a6741" opacity="0.7"/>
+                <path d="M10,120 Q10,68 50,66 Q90,68 90,120Z" fill="#4a6741" opacity="0.7"/>
+                <rect x="8" y="70" width="16" height="8" rx="4" fill="#c8a84b" opacity="0.85"/>
+                <rect x="76" y="70" width="16" height="8" rx="4" fill="#c8a84b" opacity="0.85"/>
+              </svg>
+              <p>Add Your Photo</p>
+            </div>
+          </div>
+          <div class="photo-rank-tag">SENIOR UNDER OFFICER</div>
+          <div class="photo-unit-tag">AIR WING · 1 UP AIR SQN NCC</div>
+        </div>
+        <div class="medals-row">
+          <div class="medal-pip" title="Best Cadet">&#129351;</div>
+          <div class="medal-pip" title="RDC">&#127988;</div>
+          <div class="medal-pip" title="C Certificate">&#128220;</div>
+          <div class="medal-pip" title="Marksman">&#127919;</div>
+          <div class="medal-pip" title="TSC">&#127885;</div>
+        </div>
+      </div>
+      <div class="profile-data-col reveal-right">
+        <div class="pd-table-wrap">
+          <table class="pd-table">
+            <tbody>
+              <tr><td>Full Name</td><td class="td-val">Your Full Name Here</td></tr>
+              <tr><td>Regimental No.</td><td class="td-val mono">UP / AIR / 00 / 0001</td></tr>
+              <tr><td>Rank</td><td class="td-val gold">Senior Under Officer (SUO)</td></tr>
+              <tr><td>Wing</td><td class="td-val">Air Wing — Senior Division</td></tr>
+              <tr><td>NCC Unit</td><td class="td-val">1 UP Air Sqn NCC</td></tr>
+              <tr><td>Institution</td><td class="td-val">Your College / University</td></tr>
+              <tr><td>State Directorate</td><td class="td-val">Uttar Pradesh Directorate</td></tr>
+              <tr><td>Enrolment Year</td><td class="td-val">2021</td></tr>
+              <tr><td>Certificates</td><td class="td-val gold">A · B · C — All Distinction</td></tr>
+              <tr><td>Blood Group</td><td class="td-val">O+</td></tr>
+              <tr><td>NIC Attended</td><td class="td-val">Yes — 2023</td></tr>
+              <tr><td>RDC Selected</td><td class="td-val gold">Yes — Republic Day 2024</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="rank-insignia-row">
+          <div class="ri-item"><div class="ri-star">&#9733;&#9733;&#9733;</div><span>3-Star Rank</span></div>
+          <div class="ri-item"><div class="ri-strip gold-strip"></div><span>Gold Lanyard</span></div>
+          <div class="ri-item"><div class="ri-strip green-strip"></div><span>Best Cadet</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ── ABOUT ── -->
-  <section id="about" class="reveal">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <p>Brief introduction about yourself, your NCC journey, and aspirations.</p>
+  <!-- PERFORMANCES -->
+  <section id="performances">
+    <div class="sec-head reveal">
+      <span class="eyebrow">EXCELLENCE IN ACTION</span>
+      <h2>Performances <em>&amp; Drills</em></h2>
+      <div class="sec-bar"></div>
     </div>
-  </section>
-
-  <!-- ── ACTIVITIES ── -->
-  <section id="activities" class="reveal">
-    <div class="container">
-      <h2 class="section-title">Activities</h2>
-      <div class="act-grid">
-        <div class="act-card" style="--gx:50%;--gy:50%">
-          <div class="act-icon">🏕️</div>
-          <h3>Annual Training Camp</h3>
-          <p>Description of the camp and learnings.</p>
-        </div>
-        <div class="act-card" style="--gx:50%;--gy:50%">
-          <div class="act-icon">🎯</div>
-          <h3>Shooting Practice</h3>
-          <p>Rifle shooting and marksmanship training.</p>
-        </div>
-        <div class="act-card" style="--gx:50%;--gy:50%">
-          <div class="act-icon">🏃</div>
-          <h3>Drill & Parade</h3>
-          <p>Discipline and precision through regular drill.</p>
-        </div>
-        <div class="act-card" style="--gx:50%;--gy:50%">
-          <div class="act-icon">🌊</div>
-          <h3>Adventure Activity</h3>
-          <p>Trekking, rappelling and outdoor challenges.</p>
-        </div>
-        <div class="act-card" style="--gx:50%;--gy:50%">
-          <div class="act-icon">🤝</div>
-          <h3>Community Service</h3>
-          <p>Social outreach and nation-building initiatives.</p>
-        </div>
-        <div class="act-card" style="--gx:50%;--gy:50%">
-          <div class="act-icon">✈️</div>
-          <h3>Air Wing Training</h3>
-          <p>Aeronautics, gliding and aviation awareness.</p>
-        </div>
+    <div class="perf-trio">
+      <div class="perf-card reveal" style="--d:0s">
+        <div class="pc-num">01</div>
+        <div class="pc-icon">&#129686;</div>
+        <h3>Republic Day Parade</h3>
+        <p>Selected for the State contingent at Republic Day Parade, New Delhi. Marched at Kartavya Path with precision drill representing 1 UP Air Sqn NCC.</p>
+        <div class="pc-meta"><span>New Delhi</span><span>Jan 2024</span></div>
+      </div>
+      <div class="perf-card perf-center reveal" style="--d:.12s">
+        <div class="pc-num">02</div>
+        <div class="pc-icon">&#129345;</div>
+        <h3>Inter-Unit Drill Competition</h3>
+        <p>Commanded a 20-cadet squad through advanced drill movements. Won 1st place at Directorate level. Received Commander-in-Chief Trophy.</p>
+        <div class="pc-meta"><span>State Level</span><span>Oct 2023</span></div>
+      </div>
+      <div class="perf-card reveal" style="--d:.24s">
+        <div class="pc-num">03</div>
+        <div class="pc-icon">&#9992;&#65039;</div>
+        <h3>Air Wing Display</h3>
+        <p>Performed at the Annual Air Display at Air Force Station. Demonstrated aircraft knowledge and completed a supervised glider solo flight.</p>
+        <div class="pc-meta"><span>Air Force Station</span><span>Sep 2023</span></div>
+      </div>
+    </div>
+    <div class="skill-bars reveal">
+      <h3 class="sb-title">COMPETENCY ASSESSMENT</h3>
+      <div class="sb-grid">
+        <div class="sb-item"><span class="sb-lab">Drill &amp; Parade</span><div class="sb-track"><div class="sb-fill" data-w="96"><span>96%</span></div></div></div>
+        <div class="sb-item"><span class="sb-lab">Map Reading &amp; Navigation</span><div class="sb-track"><div class="sb-fill" data-w="88"><span>88%</span></div></div></div>
+        <div class="sb-item"><span class="sb-lab">First Aid</span><div class="sb-track"><div class="sb-fill" data-w="92"><span>92%</span></div></div></div>
+        <div class="sb-item"><span class="sb-lab">Leadership &amp; Command</span><div class="sb-track"><div class="sb-fill" data-w="97"><span>97%</span></div></div></div>
+        <div class="sb-item"><span class="sb-lab">Air Subjects &amp; Aeronautics</span><div class="sb-track"><div class="sb-fill" data-w="90"><span>90%</span></div></div></div>
+        <div class="sb-item"><span class="sb-lab">Physical Fitness (APAR)</span><div class="sb-track"><div class="sb-fill" data-w="94"><span>94%</span></div></div></div>
+        <div class="sb-item"><span class="sb-lab">Obstacle Course</span><div class="sb-track"><div class="sb-fill" data-w="91"><span>91%</span></div></div></div>
+        <div class="sb-item"><span class="sb-lab">Communication</span><div class="sb-track"><div class="sb-fill" data-w="87"><span>87%</span></div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ── NCC CARDS ── -->
-  <section id="ncc" class="reveal">
-    <div class="container">
-      <h2 class="section-title">NCC Highlights</h2>
-      <div class="nc-grid">
-        <div class="nc-card" style="--gx:50%;--gy:50%">
-          <h3>Republic Day Camp</h3>
-          <p>Selected for the prestigious RDC held in New Delhi.</p>
+  <!-- FIRING -->
+  <section id="firing">
+    <div class="sec-head reveal">
+      <span class="eyebrow">MARKSMANSHIP</span>
+      <h2>Firing <em>&amp; Shooting</em></h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="firing-banner reveal">
+      <div class="target-wrap">
+        <div class="target-ring tr1"></div>
+        <div class="target-ring tr2"></div>
+        <div class="target-ring tr3"></div>
+        <div class="target-ring tr4"></div>
+        <div class="target-ring tr5"></div>
+        <div class="target-bull"><span>X</span></div>
+        <div class="bhole b1"></div><div class="bhole b2"></div><div class="bhole b3"></div>
+        <div class="bhole b4"></div><div class="bhole b5"></div><div class="bhole b6"></div>
+        <div class="crosshair-h"></div>
+        <div class="crosshair-v"></div>
+      </div>
+      <div class="firing-data">
+        <div class="fd-badge">&#127919; QUALIFIED MARKSMAN</div>
+        <p class="fd-desc">Certified Marksman in .22 Rifle and INSAS firing. Top district-level performance with consistent tight groupings at 25m and 100m ranges.</p>
+        <div class="fd-scores">
+          <div class="fds-item"><span class="fds-n">48/50</span><span class="fds-l">.22 Rifle<br>25m Range</span></div>
+          <div class="fds-item"><span class="fds-n">46/50</span><span class="fds-l">INSAS Rifle<br>100m Range</span></div>
+          <div class="fds-item fds-gold"><span class="fds-n">1st</span><span class="fds-l">District<br>Shooting</span></div>
+          <div class="fds-item fds-gold"><span class="fds-n">&#129351;</span><span class="fds-l">Gold Medal<br>Shooting Meet</span></div>
         </div>
-        <div class="nc-card" style="--gx:50%;--gy:50%">
-          <h3>B Certificate</h3>
-          <p>Achieved B grade in the NCC Certificate examination.</p>
-        </div>
-        <div class="nc-card" style="--gx:50%;--gy:50%">
-          <h3>Best Cadet Award</h3>
-          <p>Recognised as Best Cadet at the district level camp.</p>
-        </div>
+      </div>
+    </div>
+    <div class="firing-cards">
+      <div class="fc-card reveal" style="--d:0s">
+        <div class="fc-head"><span class="fc-ico">&#127919;</span><h4>.22 Bore Rifle</h4></div>
+        <p>Marksman classification at 25m range. Score 48/50 with consistent tight 5-shot groupings at centre of target.</p>
+        <ul class="fc-list">
+          <li><span>Range</span><span>25 Metres</span></li>
+          <li><span>Rounds</span><span>10 + 5 Sighting</span></li>
+          <li><span>Score</span><span class="gold">48/50 — MARKSMAN</span></li>
+        </ul>
+      </div>
+      <div class="fc-card reveal" style="--d:.1s">
+        <div class="fc-head"><span class="fc-ico">&#128299;</span><h4>INSAS Assault Rifle</h4></div>
+        <p>INSAS at 100m during TSC. Safe handling, field stripping and reassembly under time. Distinguished grade awarded.</p>
+        <ul class="fc-list">
+          <li><span>Range</span><span>100 Metres</span></li>
+          <li><span>Rounds</span><span>10 (Prone)</span></li>
+          <li><span>Score</span><span class="gold">46/50 — DISTINGUISHED</span></li>
+        </ul>
+      </div>
+      <div class="fc-card reveal" style="--d:.2s">
+        <div class="fc-head"><span class="fc-ico">&#127942;</span><h4>Inter-Unit Shooting</h4></div>
+        <p>Topped all participants in the District-level NCC Shooting Meet. Selected for State-level championship after gold medal performance.</p>
+        <ul class="fc-list">
+          <li><span>Level</span><span>District</span></li>
+          <li><span>Rank</span><span class="gold">1st Place</span></li>
+          <li><span>Award</span><span class="gold">Gold Medal</span></li>
+        </ul>
+      </div>
+      <div class="fc-card reveal" style="--d:.3s">
+        <div class="fc-head"><span class="fc-ico">&#128737;&#65039;</span><h4>Safety &amp; Range Drills</h4></div>
+        <p>Certified Range Safety Officer. Expert in range commands, weapon safety procedures and emergency drills at the range.</p>
+        <ul class="fc-list">
+          <li><span>Positions</span><span>Prone · Kneeling · Standing</span></li>
+          <li><span>Safety Cert</span><span class="gold">&#10004; Certified RSO</span></li>
+          <li><span>Weapons</span><span>.22, INSAS, AK</span></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- ── VALUES ── -->
-  <section id="values" class="reveal">
-    <div class="container">
-      <h2 class="section-title">Core Values</h2>
-      <div class="val-grid">
-        <div class="val-box">Unity &amp; Discipline</div>
-        <div class="val-box">Service Before Self</div>
-        <div class="val-box">Leadership</div>
-        <div class="val-box">Integrity</div>
-      </div>
+  <!-- CAMPS -->
+  <section id="camps">
+    <div class="sec-head reveal">
+      <span class="eyebrow">TRAINING &amp; EXPEDITIONS</span>
+      <h2>Camps <em>&amp; Journeys</em></h2>
+      <div class="sec-bar"></div>
     </div>
-  </section>
-
-  <!-- ── TIMELINE ── -->
-  <section id="timeline" class="reveal">
-    <div class="container">
-      <h2 class="section-title">My Journey</h2>
-      <div class="tl-wrapper">
-        <div class="tl-item tl-card">
-          <div class="tl-dot"></div>
-          <div class="tl-content">
-            <span class="tl-year">2021</span>
-            <h3>Enrolled in NCC</h3>
-            <p>Joined the Air Wing as a Junior Division cadet.</p>
+    <div class="camps-layout">
+      <div class="camp-big reveal-left">
+        <div class="camp-big-card">
+          <div class="cb-badge">FLAGSHIP CAMP</div>
+          <div class="cb-icon">&#127957;&#65039;</div>
+          <h3>Annual Training Camp (ATC)</h3>
+          <p>The centrepiece of every NCC cadet's year. A 10-day residential camp covering drill, weapon training, obstacle courses, map reading, first aid, cultural night and inter-platoon competitions. Awarded Best Cadet at the 2023 ATC — the highest individual honour at the camp.</p>
+          <div class="cb-details">
+            <span>&#128197; 10 Days</span>
+            <span>&#128205; State Ground</span>
+            <span>&#127885; Best Cadet</span>
+            <span>&#128101; 250+ Cadets</span>
           </div>
         </div>
-        <div class="tl-item tl-card">
-          <div class="tl-dot"></div>
-          <div class="tl-content">
-            <span class="tl-year">2022</span>
-            <h3>A Certificate</h3>
-            <p>Cleared A Certificate with distinction.</p>
+      </div>
+      <div class="camps-right">
+        <div class="camp-card reveal" style="--d:0s"><div class="ci">&#127956;&#65039;</div><div class="cb"><h4>Himalayan Trekking Expedition</h4><p>8-day high-altitude trek to Roopkund at 5,029m. Survival skills, glacier crossing and team leadership.</p><div class="camp-tags"><span>Himalayan</span><span>8 Days</span><span>5029m</span></div></div></div>
+        <div class="camp-card reveal" style="--d:.08s"><div class="ci">&#127988;</div><div class="cb"><h4>Republic Day Camp — RDC 2024</h4><p>Selected for RDC New Delhi. Marched at Kartavya Path. Attended PM's Rally at Parade Grounds.</p><div class="camp-tags"><span>New Delhi</span><span>RDC 2024</span></div></div></div>
+        <div class="camp-card reveal" style="--d:.16s"><div class="ci">&#127754;</div><div class="cb"><h4>Water Sports — INS Chilika</h4><p>Kayaking, sailing, water survival at INS Chilika, Odisha. Qualified Basic Seamanship.</p><div class="camp-tags"><span>Navy Wing</span><span>INS Chilika</span></div></div></div>
+        <div class="camp-card reveal" style="--d:.24s"><div class="ci">&#129554;</div><div class="cb"><h4>Para Training — PTS Agra</h4><p>Basic parachuting ground training at PTS Agra. Tower jumps and landing rolls completed.</p><div class="camp-tags"><span>PTS Agra</span><span>Adventure</span></div></div></div>
+        <div class="camp-card reveal" style="--d:.32s"><div class="ci">&#9992;&#65039;</div><div class="cb"><h4>Air Experience Flight</h4><p>45-min sortie in a Dornier aircraft from Air Force Station. Experienced circuits and ATC comms.</p><div class="camp-tags"><span>Dornier</span><span>Air Wing</span></div></div></div>
+        <div class="camp-card reveal" style="--d:.40s"><div class="ci">&#129309;</div><div class="cb"><h4>National Integration Camp (NIC)</h4><p>7-day cultural exchange with cadets from 20+ states. Led contingent in cultural night and cyclothon.</p><div class="camp-tags"><span>NIC</span><span>20+ States</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTIVITIES -->
+  <section id="activities">
+    <div class="sec-head reveal">
+      <span class="eyebrow">BEYOND THE PARADE GROUND</span>
+      <h2>Activities <em>&amp; Service</em></h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="act-grid">
+      <div class="act-card reveal" style="--d:0s"><div class="ac-ico">&#127939;</div><h3>Obstacle Course</h3><p>Completed the NCC obstacle course under 4 minutes. Trained 60+ junior cadets on course techniques and safety protocols.</p></div>
+      <div class="act-card reveal" style="--d:.07s"><div class="ac-ico">&#129656;</div><h3>Blood Donation Camp</h3><p>Organised 3 blood donation camps collecting 200+ units annually. District Social Service Award 2023 recipient.</p></div>
+      <div class="act-card reveal" style="--d:.14s"><div class="ac-ico">&#127807;</div><h3>Van Mahotsav</h3><p>Led a 40-cadet tree plantation drive across 3 villages. Planted 500+ saplings under Mission Harit Bharat.</p></div>
+      <div class="act-card reveal" style="--d:.21s"><div class="ac-ico">&#128692;</div><h3>Cyclothon</h3><p>Completed 60km cyclothon during NIC 2023. Finished in top 10 representing the state contingent.</p></div>
+      <div class="act-card reveal" style="--d:.28s"><div class="ac-ico">&#129529;</div><h3>Swachh Bharat</h3><p>Spearheaded cleanliness drives in 5 villages reaching 3,000+ citizens, coordinating with local panchayats.</p></div>
+      <div class="act-card reveal" style="--d:.35s"><div class="ac-ico">&#127917;</div><h3>Cultural Night</h3><p>Choreographed a patriotic cultural show at ATC. Won Best Cultural Performance trophy two years running.</p></div>
+      <div class="act-card reveal" style="--d:.42s"><div class="ac-ico">&#127946;</div><h3>Water Safety</h3><p>Qualified Basic Swimmer at INS Chilika. Certified Water Safety Instructor, trained 30 cadets in survival swimming.</p></div>
+      <div class="act-card reveal" style="--d:.49s"><div class="ac-ico">&#128218;</div><h3>Literacy Drive</h3><p>Volunteered in 'Padho India' literacy programme. Taught reading and writing to 80 children in 2 government schools.</p></div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates">
+    <div class="sec-head reveal">
+      <span class="eyebrow">CREDENTIALS &amp; AWARDS</span>
+      <h2>Certificates <em>&amp; Honours</em></h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card cert-featured reveal" onclick="openCertModal(0)">
+        <div class="cert-inner">
+          <div class="cert-doc">
+            <div class="cert-ph cert-ph-gold">
+              <div class="cert-ph-logo"><svg viewBox="0 0 60 60" fill="none" width="52" height="52"><circle cx="30" cy="30" r="28" stroke="#c8a84b" stroke-width="1.5"/><polygon points="30,10 33,22 45,22 35,30 39,42 30,34 21,42 25,30 15,22 27,22" fill="#c8a84b"/><text x="30" y="53" text-anchor="middle" fill="#c8a84b" font-size="5" font-family="Oswald" letter-spacing="1.5">NCC</text></svg></div>
+              <div class="cert-ph-title">&#11088; C CERTIFICATE &#11088;</div>
+              <div class="cert-ph-body"><p>This certifies that</p><strong>YOUR NAME</strong><p>has successfully completed all requirements for the</p><em>C Certificate Examination</em><p>Grade — <strong>A (Distinction)</strong></p></div>
+              <div class="cert-ph-foot"><span>Commanding Officer</span><span>1 UP Air Sqn NCC</span></div>
+              <div class="cert-ph-seal">&#127942;</div>
+            </div>
+            <div class="cert-overlay"><span>&#128269; VIEW FULL</span></div>
           </div>
+          <div class="cert-meta"><h4>C Certificate <span class="cert-badge">HIGHEST</span></h4><div class="cert-grade cg-gold">Grade: A — Distinction</div><div class="cert-year">2024</div></div>
         </div>
-        <div class="tl-item tl-card">
-          <div class="tl-dot"></div>
-          <div class="tl-content">
-            <span class="tl-year">2023</span>
-            <h3>Camp Leader</h3>
-            <p>Led the contingent at the State-level Annual Camp.</p>
+      </div>
+      <div class="cert-card reveal" onclick="openCertModal(1)">
+        <div class="cert-inner">
+          <div class="cert-doc">
+            <div class="cert-ph"><div class="cert-ph-logo"><svg viewBox="0 0 60 60" fill="none" width="40" height="40"><circle cx="30" cy="30" r="28" stroke="#c8a84b" stroke-width="1.5"/><polygon points="30,10 33,22 45,22 35,30 39,42 30,34 21,42 25,30 15,22 27,22" fill="#c8a84b"/></svg></div><div class="cert-ph-title">A CERTIFICATE</div><div class="cert-ph-body"><p>Awarded to</p><strong>YOUR NAME</strong><p>Grade — <strong>A</strong></p></div><div class="cert-ph-seal">&#127885;</div></div>
+            <div class="cert-overlay"><span>&#128269; VIEW</span></div>
           </div>
+          <div class="cert-meta"><h4>A Certificate</h4><div class="cert-grade cg-silver">Grade: A</div><div class="cert-year">2022</div></div>
         </div>
-        <div class="tl-item tl-card">
-          <div class="tl-dot"></div>
-          <div class="tl-content">
-            <span class="tl-year">2024</span>
-            <h3>Senior Under Officer</h3>
-            <p>Promoted to SUO — highest cadet rank in the unit.</p>
+      </div>
+      <div class="cert-card reveal" onclick="openCertModal(2)">
+        <div class="cert-inner">
+          <div class="cert-doc">
+            <div class="cert-ph"><div class="cert-ph-logo"><svg viewBox="0 0 60 60" fill="none" width="40" height="40"><circle cx="30" cy="30" r="28" stroke="#c8a84b" stroke-width="1.5"/><polygon points="30,10 33,22 45,22 35,30 39,42 30,34 21,42 25,30 15,22 27,22" fill="#c8a84b"/></svg></div><div class="cert-ph-title">B CERTIFICATE</div><div class="cert-ph-body"><p>Awarded to</p><strong>YOUR NAME</strong><p>Grade — <strong>A</strong></p></div><div class="cert-ph-seal">&#127894;</div></div>
+            <div class="cert-overlay"><span>&#128269; VIEW</span></div>
           </div>
+          <div class="cert-meta"><h4>B Certificate</h4><div class="cert-grade cg-silver">Grade: A</div><div class="cert-year">2023</div></div>
+        </div>
+      </div>
+      <div class="cert-card reveal" onclick="openCertModal(3)">
+        <div class="cert-inner">
+          <div class="cert-doc">
+            <div class="cert-ph cert-ph-dark"><div class="cert-ph-title">&#127919; MARKSMAN</div><div class="cert-ph-body"><p>Qualified as</p><strong>MARKSMAN</strong><p>.22 Rifle — <strong>48/50</strong></p></div><div class="cert-ph-seal">&#129351;</div></div>
+            <div class="cert-overlay"><span>&#128269; VIEW</span></div>
+          </div>
+          <div class="cert-meta"><h4>Marksman Certificate</h4><div class="cert-grade cg-gold">MARKSMAN</div><div class="cert-year">2023</div></div>
+        </div>
+      </div>
+      <div class="cert-card reveal" onclick="openCertModal(4)">
+        <div class="cert-inner">
+          <div class="cert-doc">
+            <div class="cert-ph cert-ph-navy"><div class="cert-ph-title">&#127988; REPUBLIC DAY CAMP</div><div class="cert-ph-body"><p>Certificate of Participation</p><strong>RDC 2024</strong><p>New Delhi, India</p></div><div class="cert-ph-seal">&#127988;</div></div>
+            <div class="cert-overlay"><span>&#128269; VIEW</span></div>
+          </div>
+          <div class="cert-meta"><h4>Republic Day Camp</h4><div class="cert-grade cg-blue">RDC 2024</div><div class="cert-year">2024</div></div>
+        </div>
+      </div>
+      <div class="cert-card reveal" onclick="openCertModal(5)">
+        <div class="cert-inner">
+          <div class="cert-doc">
+            <div class="cert-ph cert-ph-bronze"><div class="cert-ph-title">&#127942; BEST CADET</div><div class="cert-ph-body"><p>Awarded to</p><strong>YOUR NAME</strong><p>Annual Training Camp</p></div><div class="cert-ph-seal">&#127775;</div></div>
+            <div class="cert-overlay"><span>&#128269; VIEW</span></div>
+          </div>
+          <div class="cert-meta"><h4>Best Cadet Award</h4><div class="cert-grade cg-gold">DISTRICT LEVEL</div><div class="cert-year">2023</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="cert-note reveal"><span>&#128161;</span><p>To add real images: replace the <code>.cert-ph</code> div inside <code>.cert-doc</code> with <code>&lt;img src="your-cert.jpg" alt="Certificate"/&gt;</code></p></div>
+    <div id="certModal" class="cmodal" onclick="closeCertModal()">
+      <div class="cmodal-box" onclick="event.stopPropagation()">
+        <button class="cmodal-close" onclick="closeCertModal()">&#10005; CLOSE</button>
+        <div id="cmodal-body"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="sec-head reveal">
+      <span class="eyebrow">SERVICE RECORD</span>
+      <h2>The <em>Journey</em></h2>
+      <div class="sec-bar"></div>
+    </div>
+    <div class="tl-container">
+      <div class="tl-spine"></div>
+      <div class="tl-row tl-left reveal"><div class="tl-dot"><span>2021</span></div><div class="tl-card-box"><span class="tl-tag enrolment">ENROLMENT</span><h4>Joined NCC — Air Wing</h4><p>Enrolled in 1 UP Air Sqn NCC. Received first uniform and took the oath of allegiance. The beginning of a defining chapter.</p></div></div>
+      <div class="tl-row tl-right reveal"><div class="tl-dot"><span>2021</span></div><div class="tl-card-box"><span class="tl-tag training">TRAINING</span><h4>Basic Drill &amp; Ground Training</h4><p>Completed basic drill, weapon recognition, first aid and map reading. Ranked in top 5 cadets of the induction batch.</p></div></div>
+      <div class="tl-row tl-left reveal"><div class="tl-dot"><span>2022</span></div><div class="tl-card-box"><span class="tl-tag cert">A CERTIFICATE</span><h4>A Certificate — Grade A</h4><p>Passed A Certificate with Grade A. Cleared written, practical and drill with distinction. Promoted to Senior Division.</p></div></div>
+      <div class="tl-row tl-right reveal"><div class="tl-dot"><span>2022</span></div><div class="tl-card-box"><span class="tl-tag adv">EXPEDITION</span><h4>Himalayan Trekking Expedition</h4><p>Selected for 8-day high-altitude trek to Roopkund at 5,029m. Exceptional endurance and mountain craft skills demonstrated.</p></div></div>
+      <div class="tl-row tl-left reveal"><div class="tl-dot"><span>2023</span></div><div class="tl-card-box"><span class="tl-tag award">GOLD MEDAL</span><h4>District Shooting Champion</h4><p>Won gold medal in District-level NCC Shooting Competition. Score 48/50 in .22 Rifle. Marksman classification earned.</p></div></div>
+      <div class="tl-row tl-right reveal"><div class="tl-dot"><span>2023</span></div><div class="tl-card-box"><span class="tl-tag cert">B CERTIFICATE</span><h4>B Certificate — Grade A + CUO</h4><p>Cleared B Certificate with distinction. Appointed Cadet Under Officer, commanding 30 cadets in the Air Squadron.</p></div></div>
+      <div class="tl-row tl-left reveal"><div class="tl-dot"><span>2023</span></div><div class="tl-card-box"><span class="tl-tag award">BEST CADET</span><h4>Best Cadet — Annual Training Camp</h4><p>Awarded Best Cadet from 250+ cadets. Received Commander's commendation letter and the Best Cadet Trophy.</p></div></div>
+      <div class="tl-row tl-right reveal"><div class="tl-dot"><span>2024</span></div><div class="tl-card-box"><span class="tl-tag adv">RDC 2024</span><h4>Republic Day Camp — New Delhi</h4><p>Marched at Kartavya Path. Attended PM's Rally. The most prestigious NCC event — a moment of unparalleled national pride.</p></div></div>
+      <div class="tl-row tl-left reveal"><div class="tl-dot"><span>2024</span></div><div class="tl-card-box"><span class="tl-tag cert">C CERTIFICATE</span><h4>C Certificate — Grade A (Highest)</h4><p>Achieved the highest NCC certificate with Grade A. Opens doors to special recruitment in Armed Forces and Civil Services.</p></div></div>
+      <div class="tl-row tl-right tl-final reveal">
+        <div class="tl-dot tl-dot-star"><span>&#9733;</span></div>
+        <div class="tl-card-box tl-highlight">
+          <span class="tl-tag rank">CURRENT RANK</span>
+          <h4>Senior Under Officer</h4>
+          <p>Promoted to SUO — the highest cadet rank. Commanding the entire NCC unit, mentoring 120+ cadets and representing the unit at all parades and national events.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── HONOURS ── -->
-  <section id="honours" class="reveal">
-    <div class="container">
-      <h2 class="section-title">Honours &amp; Awards</h2>
-      <ul class="hs-list">
-        <li class="hs-item">🏅 Best Cadet — District Level, 2023</li>
-        <li class="hs-item">🥇 Gold Medal — Shooting Competition, 2022</li>
-        <li class="hs-item">📜 A &amp; B Certificate with Distinction</li>
-        <li class="hs-item">🎖️ Republic Day Camp Participation, New Delhi</li>
-      </ul>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="sec-head reveal">
+      <span class="eyebrow">GET IN TOUCH</span>
+      <h2>Contact <em>Me</em></h2>
+      <div class="sec-bar"></div>
     </div>
-  </section>
-
-  <!-- ── CONTACT ── -->
-  <section id="contact" class="reveal">
-    <div class="container">
-      <h2 class="section-title">Contact Me</h2>
-      <form class="contact-form" onsubmit="handleSubmit(event)">
-        <input  type="text"  name="name"    placeholder="Your Name"    required />
-        <input  type="email" name="email"   placeholder="Your Email"   required />
-        <textarea            name="message" placeholder="Your Message" required rows="5"></textarea>
-        <button type="submit" class="f-submit btn-solid">
-          Send Message <span>→</span>
-        </button>
-        <p id="fOk" style="display:none; color:#4a6741; margin-top:1rem; font-weight:600;">
-          ✅ Message sent successfully!
-        </p>
+    <div class="contact-wrap">
+      <div class="contact-left reveal-left">
+        <div class="cl-block"><span class="cl-ico">&#128231;</span><div><h4>Email</h4><p>yourname@email.com</p></div></div>
+        <div class="cl-block"><span class="cl-ico">&#128241;</span><div><h4>Phone</h4><p>+91 00000 00000</p></div></div>
+        <div class="cl-block"><span class="cl-ico">&#128205;</span><div><h4>Location</h4><p>Your City, State, India</p></div></div>
+        <div class="cl-block"><span class="cl-ico">&#127894;</span><div><h4>Unit</h4><p>1 UP Air Sqn NCC</p></div></div>
+        <blockquote class="contact-quote">"An officer who doesn't know how to be a soldier is like a soldier who doesn't know how to be a man."<cite>— Field Marshal Sam Manekshaw</cite></blockquote>
+      </div>
+      <form class="contact-form reveal-right" onsubmit="handleSubmit(event)">
+        <div class="cf-row">
+          <div class="cf-group"><label>Your Name</label><input type="text" name="name" placeholder="Full Name" required/></div>
+          <div class="cf-group"><label>Your Email</label><input type="email" name="email" placeholder="email@example.com" required/></div>
+        </div>
+        <div class="cf-group"><label>Subject</label><input type="text" name="subject" placeholder="What is this about?"/></div>
+        <div class="cf-group"><label>Message</label><textarea name="message" placeholder="Your message..." required rows="5"></textarea></div>
+        <button type="submit" class="btn-primary f-submit">SEND MESSAGE &nbsp;&#8594;</button>
+        <p id="fOk" style="display:none;">&#10003; Message received! I'll get back to you soon.</p>
       </form>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
-  <footer>
-    <p>&copy; 2025 NCC Cadet Portfolio. All rights reserved.</p>
+  <footer id="footer">
+    <div class="footer-camo"></div>
+    <div class="footer-inner">
+      <div class="fi-logo">
+        <svg viewBox="0 0 54 54" fill="none" width="44" height="44"><circle cx="27" cy="27" r="25" stroke="#c8a84b" stroke-width="1.8"/><polygon points="27,9 30,19 41,19 32,26 35,36 27,30 19,36 22,26 13,19 24,19" fill="#c8a84b"/><text x="27" y="50" text-anchor="middle" fill="#c8a84b" font-size="4.5" font-family="Oswald" letter-spacing="1.5">NCC</text></svg>
+        <div><p class="fi-name">NCC CADET PORTFOLIO</p><p class="fi-sub">Unity and Discipline</p></div>
+      </div>
+      <div class="fi-nav">
+        <a href="#about-ncc">About NCC</a><a href="#performances">Performance</a><a href="#firing">Firing</a><a href="#camps">Camps</a><a href="#certificates">Certificates</a><a href="#contact">Contact</a>
+      </div>
+      <p class="fi-copy">&#169; 2025 NCC Cadet Portfolio. All Rights Reserved. &nbsp;|&nbsp; Jai Hind &#127988;</p>
+    </div>
   </footer>
 
   <script src="index.js"></script>
